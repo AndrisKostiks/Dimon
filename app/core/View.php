@@ -12,8 +12,16 @@ class View
     {
     }
 
-    public function render($name)
+    public function render($name, $noInclude = false)
     {
-        require 'app/view/'.$name.'.phtml';
+
+        if($noInclude = false){
+            require 'app/view/'.$name.'.phtml';
+
+        }else{
+            require 'app/view/header.phtml';
+            require 'app/view/'.$name.'.phtml';
+            require 'app/view/footer.phtml';
+        }
     }
 }

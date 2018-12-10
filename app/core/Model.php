@@ -8,18 +8,9 @@
 
 class Model
 {
-    const USERNAME="root";
-    const PASSWORD="";
-    const HOST="localhost";
-    const DB="magebit";
-    public function __construct()
-    {
-        echo 'Main Model!';
-        $username = self::USERNAME;
-        $password = self::PASSWORD;
-        $host = self::HOST;
-        $db = self::DB;
-        $connection = new PDO("mysql:dbname=$db;host=$host", $username, $password);
-        return $connection;
+    function __construct() {
+
+        $this->db = new Database();
+
     }
 }

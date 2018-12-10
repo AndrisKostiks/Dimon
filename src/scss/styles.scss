@@ -1,10 +1,17 @@
-$black: #343434;
+$grey: #343434;
+$black: #000000;
+$red: #8a0004;
+$green: #009700;
+
 *{
   background-color: $black;
   overflow-y: hidden;
+  color: $green;
+  //canvas
   #c{
     width: 100%;
   }
+  // Start Index ----------------------------------------------------------------------- START
   .startText-Wrapper{
     display: block;
     position: absolute;
@@ -25,19 +32,68 @@ $black: #343434;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0;
+    top: 15vh;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     .modal-content{
-      background-color: #fefefe;
+      background-color: $black;
       margin: 15% auto; /* 15% from the top and centered */
       padding: 20px;
       border: 1px solid #888;
       width: 80%; /* Could be more or less, depending on screen size */
+      height: 25vh;
+      p{
+        color: $red;
+      }
+      h2{
+        color: $red;
+      }
+      h3{
+        color: $red;
+      }
+      span{
+        color: $red;
+      }
+      #start{
+        border: 2px solid $green;
+        color: $red;
+      }
     }
 
+  }
+  // Start Index ----------------------------------------------------------------------- END
+  // ERROR PAGE ------------------------------------------------------------------------ START
+  .errorClassTextHeader{
+    color: $green;
+    font-size: larger;
+    font-family: Consolas, serif;
+  }
+  .errorClassTextParagraph{
+    color: $green;
+    font-size: larger;
+    font-family: Consolas, serif;
+  }
+  // ERROR PAGE ------------------------------------------------------------------------ END
+  // Login||Signup --------------------------------------------------------------------- START
+  .loginWrapper{
+    .coolButton{
+      color: $green;
+      font-size: larger;
+      font-family: Consolas, serif;
+    }
+    .loginPageParagraph{
+      color: $green;
+      font-size: larger;
+      font-family: Consolas, serif;
+    }
+    .formWrapper{
+      .loginPageForm{
+        .inputWrapper{
+        }
+      }
+    }
   }
 }

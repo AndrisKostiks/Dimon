@@ -1,5 +1,39 @@
-<?php require 'app/view/header.phtml' ?>
 <body>
-
+<div class="loginWrapper">
+    <p class="loginPageParagraph">Hey Anon, SignUp || if(isset(account)) LogIn </p>
+    <hr>
+    <button class="coolButton" id="button1">Login</button>
+    <button class="coolButton" id="button2">Signup</button>
+    <div class="formWrapper">
+        <form action="login/logUser" method="post" class="loginPageForm" id="LForm1">
+            <p class="loginPageParagraph">LOGIN</p>
+            <div class="inputWrapper">
+                <label>Username:
+                    <input type="text" name="login">
+                </label>
+                <label>Pass:
+                    <input type="password" name="pass">
+                </label>
+                <input type="submit" value="Submit" >
+            </div>
+        </form>
+    </div>
+    <div class="formWrapper">
+        <form action="login/regUser" method="post" class="loginPageForm" id="LForm2">
+            <p class="loginPageParagraph">SIGNUP</p>
+            <div class="inputWrapper">
+                <label>Email:
+                    <input type="email" name="mail">
+                </label>
+                <label>Username:
+                    <input type="text" name="username">
+                </label>
+                <label>Pass:
+                    <input type="password" name="password">
+                </label>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
 </body>
-<?php require 'app/view/footer.phtml' ?>

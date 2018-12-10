@@ -50,7 +50,9 @@ function resize(){
     c.height = window.innerHeight;
     c.width = window.innerWidth;
 }
-
+$("#start").click(function () {
+   document.location.href = 'http://schoolthing/login';
+});
 resize();
 $(window).on("resize", function(){
     resize();
@@ -58,18 +60,20 @@ $(window).on("resize", function(){
 setInterval(draw, 33);
 
 var modal = document.getElementById('myModal');
-var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close")[0];
+var span2 = document.getElementsByClassName("close")[1];
 document.body.onkeyup = function(e){
     if(e.keyCode === 32 ||e.key ===""){
         modal.style.display = "block";
     }
 };
-span.onclick = function() {
+span1.onclick = function() {
     modal.style.display = "none";
 };
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-        alert("IDI NAHUY");
-    }
+span2.onclick = function() {
+    modal.style.display = "none";
 };
+
+
+
+

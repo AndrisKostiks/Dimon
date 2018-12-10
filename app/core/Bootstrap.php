@@ -31,31 +31,35 @@ class Bootstrap
         $url = explode('/',$url);
 
         $url[0]= $this->chopExtension($url[0]);
-        if ($url[0] == false){
-            $url[0] = "index";
-        }
 
+        if(empty($url[0])){
+            require 'app/controller/index.php';
+            $controller = new Index();
+            $controller->index();
+            return false;
+        }
         $file = 'app/controller/'.$url[0].'.php';
+        if (file_exists($file)){
+            require $file;
 
-        if(file_exists($file))
-        {
-            require_once $file;
-            $controller = new $url[0];
-
-            if(isset($url[2]))
-            {
-                $controller->{$url[1]}($url[2]);
-            }
-            elseif(isset($url[1]))
-            {
-                $controller->{$url[1]}();
-            }
-        }
-        else
-        {
-
+        }else{
             require 'app/controller/ErrorClass.php';
-            $error = new ErrorClass();
+            $controller = new ErrorClass();
+            $controller->index();
+
         }
+        $controller = new $url[0];
+        $controller->loadModel($url[0]);
+        if(isset($url[2])){
+            $controller->{$url[1]}($url[2]);
+            return false;
+        } else{
+            if(isset($url[1])){
+                $controller->{$url[1]}();
+                return false;
+            }
+        }
+        $controller->index();
+        return false;
     }
 }

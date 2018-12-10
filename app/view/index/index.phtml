@@ -1,32 +1,31 @@
-<?php require 'app/view/header.phtml' ?>
+
 <body>
 <div class="wrapper">
     <div id="myModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>Modal Header</h2>
+                <h2>Hello Player!</h2>
             </div>
+            <hr>
             <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
+                <p>You have stumbled upon my humble game.</p>
+                <p>Care to play?</p>
             </div>
+            <hr>
             <div class="modal-footer">
                 <h3>Modal Footer</h3>
             </div>
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <hr>
+            <p>Press the button to start, hope you like it :)</p>
+            <hr>
+            <button id="start">Game On!</button>
         </div>
-
     </div>
     <div class="startText-Wrapper">
         <h2 class="startText-Content">< Press Space To Start ></h2>
     </div>
     <canvas id="c">
-
     </canvas>
 </body>
 
-
-
-<?php require 'app/view/footer.phtml' ?>

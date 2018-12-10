@@ -14,7 +14,8 @@ class Signup extends Controller
     function __construct()
     {
         parent::__construct();
-        echo 'We are in Signup<br/>';
-
+    }
+    public function index(){
+        $this->view->render('signup/index');
     }
 }

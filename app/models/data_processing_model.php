@@ -11,7 +11,6 @@ class Data_processing_model extends Model
     public function __construct()
     {
         parent::__construct();
-        $data[] = $_GET;
-        var_dump($data);
+
     }
 }
